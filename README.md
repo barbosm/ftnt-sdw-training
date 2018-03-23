@@ -8,8 +8,6 @@
   - If Bastion is Ubuntu 17.04
   - wget https://raw.githubusercontent.com/barbosm/ftnt-sdw-training/master/bastion_files/sources.list
 - apt update
-- Proceed to prepare_bastion.sh
-
-
+- Execute bastion_files/prepare_bastion.sh
 
 
