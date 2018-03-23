@@ -11,7 +11,7 @@ cp ftpusers /etc/ftpusers
 cp vsftpd.conf /etc/vsftpd.conf
 service vsftpd restart
 mkdir -p /srv/ftp/demo_files
-mount --bind /root/scripts/ftnt-fam-demo/ftp_files /srv/ftp/demo_files
+mount --bind /root/ftnt-sdw-training/ftp_files /srv/ftp/demo_files
 
 # SSH
 mkdir /root/.ssh
