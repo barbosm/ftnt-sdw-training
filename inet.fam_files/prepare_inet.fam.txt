@@ -1,0 +1,8 @@
+# Comment /root/wanem_init.sh last 2 lines
+
+# ssh-copy-id from bastion to inet.fam
+
+# fix /etc/network/interfaces
+
+# fix rc.local
+scp rc.local.wanem inet.fam:/etc/rc.local

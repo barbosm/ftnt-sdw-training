@@ -1,0 +1,19 @@
+# fix /etc/network/interfaces
+
+# update crontab
+
+# +---------------- minute (0 - 59)
+# |  +------------- hour (0 - 23)
+# |  |  +---------- day of month (1 - 31)
+# |  |  |  +------- month (1 - 12)
+# |  |  |  |  +---- day of week (0 - 6) (Sunday=0 or 7)
+# |  |  |  |  |
+# *  *  *  *  *  command to be executed
+
+# debug only
+#* * * * * /opt/fortiview/gen_devtypes_realtime.py >> /opt/fortiview/gen_devtypes_realtime.log 2>&1
+
+*/10 * * * * /opt/fortiview/gen_devtypes_realtime.py
+
+
+# copy python script to it

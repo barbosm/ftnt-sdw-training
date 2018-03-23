@@ -1,0 +1,35 @@
+127.0.0.1	localhost
+127.0.1.1	fortinet-virtual-machine
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+127.0.0.1 Ubuntu-Desktop
+127.0.0.1 Bastion-MGMT
+
+# FAM
+192.168.0.1	bastion
+192.168.0.2	inet
+192.168.0.3	fgext
+192.168.0.4	fgacct
+192.168.0.5	fgmkt
+192.168.0.6	fgsales
+192.168.0.7	bo01
+192.168.0.8	bo02
+192.168.0.9	bo03
+192.168.0.10	fmg01
+192.168.0.11	faz01
+192.168.0.12	faz02
+192.168.0.13	loggen
+192.168.0.14	t1_acct
+192.168.0.15	t1_mkt
+192.168.0.16	t1_bo01
+192.168.0.17	t1_sales
+192.168.0.18	t1_mgmt
+
+# INET
+203.0.113.226	iperf.inet
+203.0.113.227	web1.inet
