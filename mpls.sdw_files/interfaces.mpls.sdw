@@ -1,0 +1,33 @@
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+    netmask 255.255.255.0
+    address 192.168.0.3
+#    up route add -net 0.0.0.0/0 gw 192.168.0.254 dev eth0
+    dns-nameservers 8.8.8.8
+#    up route add -net 10.0.0.0/8 gw 192.168.0.254 dev eth0
+    up route add -net 172.16.0.0/12 gw 192.168.0.254 dev eth0
+#    up route add  8.8.8.8/32 gw 192.168.0.254 dev eth0
+#    up route add -net 208.91.112.0/22 gw 192.168.0.254 dev eth0
+#    up route add -net 96.45.32.0/20 gw 192.168.0.254 dev eth0
+#    up route add -net 173.243.128.0/20 gw 192.168.0.254 dev eth0
+auto eth1
+allow-hotplug eth1
+iface eth1 inet static
+    netmask 255.255.255.248
+    address 192.0.2.1
+auto eth2
+allow-hotplug eth2
+iface eth2 inet static
+    netmask 255.255.255.248
+    address 192.0.2.17
+auto eth3
+allow-hotplug eth3
+iface eth3 inet static
+    netmask 255.255.255.248
+    address 192.0.2.33
+auto eth4
+allow-hotplug eth4
+iface eth4 inet static
+    netmask 255.255.255.248
+    address 192.0.2.49

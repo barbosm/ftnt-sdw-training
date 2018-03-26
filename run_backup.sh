@@ -1,12 +1,9 @@
 #!/bin/bash
 
-devices=( "fgext.fam"
-	  "fgacct.fam" 
-	  "fgmkt.fam" 
-	  "fgsales.fam"
-	  "bo01.fam"
-	  "bo02.fam"
-	  "bo03.fam")
+devices=( "dc01.sdw"
+          "dc02.sdw"
+          "s01.sdw"
+          "s02.sdw")
 
 for device in "${devices[@]}"
 do

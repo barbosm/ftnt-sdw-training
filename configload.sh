@@ -1,44 +1,21 @@
 #!/bin/bash
 
-devices=( "fgext.fam"
-	  "fgacct.fam" 
-	  "fgmkt.fam" 
-	  "fgsales.fam"
-	  "bo01.fam"
-	  "bo02.fam"
-	  "bo03.fam")
-
-device='fgext.fam'
+device='dc01.sdw'
 ssh admin@$device "
 exec restore config ftp demo_files/$device.conf 192.168.0.1
 y"
 
-device='fgacct.fam'
+device='dc02.sdw'
 ssh admin@$device "
 exec restore config ftp demo_files/$device.conf 192.168.0.1
 y"
 
-device='fgmkt.fam'
+device='s01.sdw'
 ssh admin@$device "
 exec restore config ftp demo_files/$device.conf 192.168.0.1
 y"
 
-device='fgsales.fam'
+device='s02.sdw'
 ssh admin@$device "
 exec restore config ftp demo_files/$device.conf 192.168.0.1
 y"
-
-#device='bo01.fam'
-#ssh admin@$device "
-#exec restore config ftp demo_files/$device.conf 192.168.0.1
-#y"
-
-#device='bo02.fam'
-#ssh admin@$device "
-#exec restore config ftp demo_files/$device.conf 192.168.0.1
-#y"
-
-#device='bo03.fam'
-#ssh admin@$device "
-#exec restore config ftp demo_files/$device.conf 192.168.0.1
-#y"

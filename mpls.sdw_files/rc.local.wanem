@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# rc.local
+#
+# Start local services after hardware detection
+
+SERVICES="apache2 ajaxterm"
+
+for i in $SERVICES; do
+ [ -x /etc/init.d/"$i" ] && /etc/init.d/"$i" start >/dev/null 2>&1
+done
+
+/etc/init.d/ssh start
+
+echo 1 > /proc/sys/net/ipv4/ip_forward
+#/sbin/iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+
+exit 0
