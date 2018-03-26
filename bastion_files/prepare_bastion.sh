@@ -6,6 +6,8 @@
 # apt install dnsmasq vsftpd git
 # apt install php libapache2-mod-php php-mcrypt php-mysql
 
+# git clone https://github.com/barbosm/ftnt-sdw-training.git
+
 # FTP
 cp ftpusers /etc/ftpusers
 cp vsftpd.conf /etc/vsftpd.conf
