@@ -12,5 +12,7 @@
 - Execute bastion_files/prepare_bastion.sh
 
 - Connect to inet.sdw
-- Execute inet.sdw_files/prepare_inet.sdw.txt
+- Execute inet.sdw_files/prepare_inet.sdw.sh
 
+- Connect to mpls.sdw
+- Execute mpls.sdw_files/prepare_mpls.sdw.sh
