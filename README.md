@@ -11,4 +11,6 @@
   - apt update
 - Execute bastion_files/prepare_bastion.sh
 
+- Connect to inet.sdw
+- Execute inet.sdw_files/prepare_inet.sdw.txt
 
