@@ -1,0 +1,142 @@
+interfaces {
+    ethernet eth0 {
+        address 192.168.0.17/24
+        duplex auto
+        hw-id 00:50:56:01:ec:6e
+        smp_affinity auto
+        speed auto
+    }
+    ethernet eth1 {
+        address 10.101.0.250/24
+        duplex auto
+        hw-id 00:50:56:01:ec:6f
+        smp_affinity auto
+        speed auto
+    }
+    ethernet eth2 {
+        address 10.102.0.254/24
+        duplex auto
+        hw-id 00:50:56:01:ec:70
+        smp_affinity auto
+        speed auto
+    }
+    ethernet eth3 {
+        address 10.201.0.250/24
+        duplex auto
+        hw-id 00:50:56:01:ec:71
+        smp_affinity auto
+        speed auto
+    }
+    ethernet eth4 {
+        duplex auto
+        hw-id 00:50:56:01:ec:72
+        smp_affinity auto
+        speed auto
+    }
+    ethernet eth5 {
+        duplex auto
+        hw-id 00:50:56:01:ec:73
+        smp_affinity auto
+        speed auto
+    }
+    ethernet eth6 {
+        duplex auto
+        hw-id 00:50:56:01:ec:74
+        smp_affinity auto
+        speed auto
+    }
+    ethernet eth7 {
+        duplex auto
+        hw-id 00:50:56:01:ec:75
+        smp_affinity auto
+        speed auto
+    }
+    loopback lo {
+    }
+}
+protocols {
+    static {
+        route 0.0.0.0/0 {
+            next-hop 10.101.0.254 {
+            }
+        }
+        route 172.16.0.0/12 {
+            next-hop 192.168.0.254 {
+                distance 1
+            }
+        }
+    }
+}
+service {
+    ssh {
+        port 22
+    }
+}
+system {
+    config-management {
+        commit-revisions 20
+    }
+    console {
+        device ttyS0 {
+            speed 9600
+        }
+    }
+    host-name R1-DC01
+    login {
+        user admin {
+            authentication {
+                encrypted-password $6$lD1WlpBXOkYI$l0eZXUJ3Jd5tjHBahJ/FWLnzT3L/MR6qMZ7Ay9Pi3SKCLePwmWOr6qX379Vbs2Id4hCPJPzcBj.nLjUK1exn40
+                plaintext-password ""
+                public-keys root@Bastion-MGMT {
+                    key AAAAB3NzaC1yc2EAAAADAQABAAABAQD0FfXgR813RshjxZ6ZoRnIPlLzZkydnCgfbGhXE2g79gAJ4TuYWQhDGZj7cmgYjOLsvjMQknhobuWXgVd2jIbG7C27D2YGt7lQgwCzxRRWQtbsYyMfIia37kE5FB/n4Uw01Qe639b/d5ydNmnybejJO4OdBO2sSkNz32VX0Yxf3lgPROAqroIfuLyQHDjiLhcxQhtx8RM96+21zkSVRd0wiFNJCGgPCm3rr/Sdw/uLPTRunpNdYCtxMN0lklmTKTU+Zs9RyAyNBAJhmAr6V34FMd0pOdsbmxoxxzAoWtyXuxzQdMWN4JjLAVSLkQ7RUFMUYZiMQ8WxpIOGxv6pFOgz
+                    type ssh-rsa
+                }
+            }
+            full-name admin
+            level admin
+        }
+        user vyos {
+            authentication {
+                encrypted-password $1$5HsQse2v$VQLh5eeEp4ZzGmCG/PRBA1
+                plaintext-password ""
+            }
+            level admin
+        }
+    }
+    name-server 8.8.8.8
+    name-server 192.168.0.1
+    ntp {
+        server 0.pool.ntp.org {
+        }
+        server 1.pool.ntp.org {
+        }
+        server 2.pool.ntp.org {
+        }
+    }
+    package {
+        auto-sync 1
+        repository community {
+            components main
+            distribution helium
+            password ""
+            url http://packages.vyos.net/vyos
+            username ""
+        }
+    }
+    syslog {
+        global {
+            facility all {
+                level notice
+            }
+            facility protocols {
+                level debug
+            }
+        }
+    }
+    time-zone UTC
+}
+
+
+/* Warning: Do not remove the following line. */
+/* === vyatta-config-version: "cluster@1:config-management@1:conntrack-sync@1:conntrack@1:cron@1:dhcp-relay@1:dhcp-server@4:firewall@5:ipsec@4:nat@4:qos@1:quagga@2:system@6:vrrp@1:wanloadbalance@3:webgui@1:webproxy@1:zone-policy@1" === */
+/* Release version: VyOS 1.1.7 */
