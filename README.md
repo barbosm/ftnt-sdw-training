@@ -9,10 +9,17 @@
   - wget https://raw.githubusercontent.com/barbosm/ftnt-sdw-training/master/bastion_files/sources.list
   - mv sources.list /etc/apt/sources.list
   - apt update
-- Execute bastion_files/prepare_bastion.sh
+- Run bastion_files/prepare_bastion.sh
 
 - Connect to inet.sdw
-- Execute inet.sdw_files/prepare_inet.sdw.sh
+- Run inet.sdw_files/prepare_inet.sdw.sh
 
 - Connect to mpls.sdw
-- Execute mpls.sdw_files/prepare_mpls.sdw.sh
+- Run mpls.sdw_files/prepare_mpls.sdw.sh
+
+- Run prepare_hosts.sh
+- Run device_files/prepare_devices.sh
+- Run device_files/prepare_t1_dc01.sdw.sh
+- Run device_files/prepare_web1.sdw.sh
+
+- Run configload.sh

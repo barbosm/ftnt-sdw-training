@@ -13,3 +13,5 @@ scp interfaces.inet.sdw inet.sdw:/etc/network/interfaces
 scp rc.local.wanem inet.sdw:/etc/rc.local
 
 # reboot inet.sdw
+ssh inet.sdw "reboot"
+

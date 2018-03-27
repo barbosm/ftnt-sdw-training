@@ -13,3 +13,4 @@ scp interfaces.mpls.sdw mpls.sdw:/etc/network/interfaces
 scp rc.local.wanem mpls.sdw:/etc/rc.local
 
 # reboot device 
+ssh root@mpls.sdw "reboot"
