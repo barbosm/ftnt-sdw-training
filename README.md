@@ -22,4 +22,5 @@
 - Run device_files/prepare_t1_dc01.sdw.sh
 - Run device_files/prepare_web1.sdw.sh
 
+- Update all to b73
 - Run configload.sh
