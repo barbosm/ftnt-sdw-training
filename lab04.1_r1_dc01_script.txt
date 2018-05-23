@@ -1,0 +1,65 @@
+# R1_DC01 - VyOS
+
+# Connect on R1_DC01 SERIAL CONSOLE
+
+# Apply this
+configure
+set service ssh port 22
+
+# Interfaces
+set interfaces ethernet eth0 address 192.168.0.17/24
+commit
+
+# Connect using SSH
+# ssh vyos@fpoc -p 10107
+# pass: vyos
+# Paste this
+
+configure
+set interfaces ethernet eth0 description OOB_MGMT
+
+set interfaces ethernet eth1 address 10.101.0.250/24
+set interfaces ethernet eth1 description LAN_101
+
+set interfaces ethernet eth2 address 10.102.0.254/24
+set interfaces ethernet eth2 description LAN_102
+
+set interfaces ethernet eth3 address 10.201.0.250/24
+set interfaces ethernet eth3 description LAN_201
+
+# Hostaname
+set system host-name R1-DC01
+
+# Admin User
+set system login user admin full-name "admin"
+set system login user admin authentication plaintext-password fortinet
+set system login user admin level admin 
+
+set system login user admin authentication public-keys root@Bastion-MGMT key AAAAB3NzaC1yc2EAAAADAQABAAABAQD0FfXgR813RshjxZ6ZoRnIPlLzZkydnCgfbGhXE2g79gAJ4TuYWQhDGZj7cmgYjOLsvjMQknhobuWXgVd2jIbG7C27D2YGt7lQgwCzxRRWQtbsYyMfIia37kE5FB/n4Uw01Qe639b/d5ydNmnybejJO4OdBO2sSkNz32VX0Yxf3lgPROAqroIfuLyQHDjiLhcxQhtx8RM96+21zkSVRd0wiFNJCGgPCm3rr/Sdw/uLPTRunpNdYCtxMN0lklmTKTU+Zs9RyAyNBAJhmAr6V34FMd0pOdsbmxoxxzAoWtyXuxzQdMWN4JjLAVSLkQ7RUFMUYZiMQ8WxpIOGxv6pFOgz
+
+set system login user admin authentication public-keys root@Bastion-MGMT type ssh-rsa
+
+# OSPF
+set protocols ospf area 0 network 10.101.0.0/24
+set protocols ospf area 0 network 10.201.0.0/24
+set protocols ospf log-adjacency-changes 
+set protocols ospf parameters router-id 10.101.0.250 
+set protocols ospf redistribute connected metric-type 2
+
+# Commit
+commit
+save
+
+# GO TO DC01
+# Enable OSPF
+
+# Check routes
+show ip route
+
+# R1_DC01 should always prefer DC01 for all Spokes, let's change the
+# metric on DC02 to make DC01 default metric (10) the better
+
+# GO TO DC02
+# Adjust redistribute metric
+
+# EOF
