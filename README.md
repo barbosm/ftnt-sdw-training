@@ -9,6 +9,8 @@
   - wget https://raw.githubusercontent.com/barbosm/ftnt-sdw-training/master/bastion_files/sources.list
   - mv sources.list /etc/apt/sources.list
   - apt update
+  - apt install git
+  - git clone https://github.com/barbosm/ftnt-sdw-training.git
 - Run bastion_files/prepare_bastion.sh
 
 - Connect to inet.sdw
